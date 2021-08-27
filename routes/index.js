@@ -9,9 +9,9 @@ router.get('/', (req, res) => {
 router.get('/quotes', quoteFunctions.listAllQuotes)
 router.post('/quotes', quoteFunctions.createQuote)
 
-// router.get('/users/:userId', userFunctions.findUser)
+router.get('/quotes/:quoteId', quoteFunctions.findQuote)
 // router.delete('/users/:userId', userFunctions.deleteUser)
-// router.put('/users/:userId', userFunctions.updateUser)
+router.put('/quotes/:quoteId', quoteFunctions.updateQuote)
 
 
 module.exports = router;

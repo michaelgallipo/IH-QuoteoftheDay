@@ -19,3 +19,22 @@ exports.createQuote = (req, res) => {
     res.status(400).send('Sorry! Something went wrong.');
     });
 }
+
+exports.findQuote = (req, res) => {
+  Quote.findById(req.params.quoteId, (err, quote) => {
+    if (err) res.send(err);
+    res.json(quote);
+  });
+}
+
+exports.updateQuote = (req, res) => {
+  Quote.findOneAndUpdate(
+    {_id: req.params.quoteId},
+    req.body,
+    {new: true},
+    (err, quote) => {
+      if (err) return res.status(400).send(err);
+      res.json(quote);
+    }
+  );
+};
