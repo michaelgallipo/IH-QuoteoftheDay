@@ -18,10 +18,10 @@ const quoteSchema = new mongoose.Schema({
   Used: {
     type: Boolean,
     required: true,
+  },
+  Active: {
+    type: Boolean
   }
-  // Active: {
-  //   type: Boolean
-  // }
 });
 
 module.exports = mongoose.model('Quote', quoteSchema);

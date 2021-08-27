@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/quotes', quoteFunctions.listAllQuotes)
-// router.post('/users', userFunctions.createUser)
+router.post('/quotes', quoteFunctions.createQuote)
 
 // router.get('/users/:userId', userFunctions.findUser)
 // router.delete('/users/:userId', userFunctions.deleteUser)
