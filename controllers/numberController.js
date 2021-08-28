@@ -10,6 +10,7 @@ exports.listAllNumbers = (req, res) => {
 }
 
 exports.createNumber = (req, res) => {
+  console.log(req.body, req.params);
   const number = new Number(req.body);
   number.save()
   .then(() => { res.send('Phone Number Successfully Saved!'); })

@@ -28,6 +28,7 @@ exports.findQuote = (req, res) => {
 }
 
 exports.updateQuote = (req, res) => {
+  console.log(req.body);
   Quote.findOneAndUpdate(
     {_id: req.params.quoteId},
     req.body,
@@ -38,3 +39,14 @@ exports.updateQuote = (req, res) => {
     }
   );
 };
+
+exports.resetUsed = (req, res) => {
+  Quote.updateMany(
+    {Used: true},
+    {Used: false},
+    (err, quotes) => {
+      if (err) return res.status(400).send(err);
+      res.json(quotes);
+    }
+  );
+}

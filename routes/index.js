@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
 
 router.get('/quotes', quoteFunctions.listAllQuotes)
 router.post('/quotes', quoteFunctions.createQuote)
+router.put('/quotes', quoteFunctions.resetUsed)
 
 router.get('/quotes/:quoteId', quoteFunctions.findQuote)
 router.put('/quotes/:quoteId', quoteFunctions.updateQuote)
