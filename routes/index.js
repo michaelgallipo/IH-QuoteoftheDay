@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const quoteFunctions = require('../controllers/quoteController');
 const numberFunctions = require('../controllers/numberController');
+const messageFunctions = require('../controllers/messageController');
 
 router.get('/', (req, res) => {
   res.send('It works!');
@@ -18,6 +19,8 @@ router.get('/numbers', numberFunctions.listAllNumbers)
 router.post('/numbers', numberFunctions.createNumber)
 
 router.put('/numbers/:numberId', numberFunctions.updateNumber)
+
+router.post('/messages', messageFunctions.sendMessage)
 
 
 module.exports = router;
