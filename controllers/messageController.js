@@ -9,7 +9,6 @@ const twilio = require ('twilio')(accountSid, authToken);
 
 exports.sendMessage = (req, res) => {
   req.body.currNumbers.forEach(num => {
-    console.log(num);
     twilio.messages
       .create({
         body: req.body.message,
